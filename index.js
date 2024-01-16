@@ -1,4 +1,5 @@
 const express = require("express");
+const multer = require("multer")
 // const { createNode, readNode } = require("./input.json")
 const port = 8000;
 const app = express();
@@ -15,5 +16,4 @@ app.get("/users", (req, res) => {
 
 app.listen(port, () => {
     console.log("Server is running on http://localhost:" + port)
-
 });
