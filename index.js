@@ -6,14 +6,15 @@ const app = express();
 
 app.get("/", (req, res) => {
     res.send("Hello world")
+    req.send(req)
+    console.log("req", req)
 });
 
 app.get("/users", (req, res) => {
     const users = readNode();
     res.send(users);
-
 });
 
-app.listen(port, () => {
+app.listen(port, (req) => {
     console.log("Server is running on http://localhost:" + port)
 });
