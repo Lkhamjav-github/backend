@@ -1,20 +1,15 @@
 const express = require("express");
-const multer = require("multer")
-// const { createNode, readNode } = require("./input.json")
-const port = 8000;
+
+const PORT = 8080;
 const app = express();
-
 app.get("/", (req, res) => {
-    res.send("Hello world")
-    req.send(req)
-    console.log("req", req)
-});
+    res.send("Hello world!")
+})
+app.get("/products", (req, res) => {
+    const products = [];
+    res.send(products);
+})
 
-app.get("/users", (req, res) => {
-    const users = readNode();
-    res.send(users);
-});
+app.listen(PORT, () => {
 
-app.listen(port, (req) => {
-    console.log("Server is running on http://localhost:" + port)
-});
+})
