@@ -10,25 +10,25 @@ app.get("/", (req, res) => {
     res.send("Hello world");
 });
 
-app.get("/product", (req, res) => {
+app.get("/products", (req, res) => {
     const users = readNode();
     res.send(users);
 });
 
-app.post("/product", (req, res) => {
+app.post("/products", (req, res) => {
     const product = req.body;
     createNode(product);
     res.status(201).send("Success");
 });
 
-app.put("/product/:id", (req, res) => {
+app.put("/products/:id", (req, res) => {
     const id = req.params.id;
     const node = req.body;
     updateNode(Number(id), node);
     res.send("success update");
 });
 
-app.delete("/product/:id", (req, res) => {
+app.delete("/products/:id", (req, res) => {
     const id = req.params.id;
     deleteNode(Number(id));
     res.send("success delete");
