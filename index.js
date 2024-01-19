@@ -3,7 +3,7 @@ const app = express();
 const { readNode, createNode, updateNode, deleteNode } = require("./index");
 const PORT = 8080;
 const cors = require("cors");
-app.use(cors("http://localhost:3001/products"));
+app.use(cors("http://localhost:3000/products"));
 app.use(express.json());
 
 app.get("/", (req, res) => {
